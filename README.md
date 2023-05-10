@@ -21,7 +21,15 @@ Set up
    8. Do the users and groups with CRUD functions by creating users or groups
    9. Users paging table and searching 
    
+Demo pages
+  http://localhost/index.php
+  http://localhost/CreateUser.php
+  http://localhost/CreateGroup.php
+  http://localhost:5000/
+  
 Database
+  http://localhost:5000/
   Database dump could be found on usergroupDB.sql file. 
   Related database manipulation files are under DB folder with createDB.php and dropDB.php files.
   A list view for users already exists is the index.php file.
+  
