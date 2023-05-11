@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: May 10, 2023 at 06:34 AM
+-- Generation Time: May 11, 2023 at 03:40 AM
 -- Server version: 8.0.33
 -- PHP Version: 7.4.1
 
@@ -91,13 +91,15 @@ INSERT INTO `users` (`userid`, `groupids`, `email`, `name`, `phone`, `created_by
 -- Indexes for table `allgroups`
 --
 ALTER TABLE `allgroups`
-  ADD PRIMARY KEY (`groupid`);
+  ADD PRIMARY KEY (`groupid`),
+  ADD UNIQUE KEY `unique_groupname` (`groupname`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`userid`);
+  ADD PRIMARY KEY (`userid`),
+  ADD UNIQUE KEY `unique_email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables

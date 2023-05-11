@@ -21,14 +21,15 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
 	created_by INT(11) NOT NULL,
 	created_date DATETIME NOT NULL,
 	updated_by INT(11) NOT NULL,
-	updated_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+	updated_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	UNIQUE KEY unique_email (email)  
 )";
 $conn->query($sql);
 $sql="ALTER TABLE users ENGINE = InnoDB";
 $conn->query($sql);
 $sql="ALTER TABLE users MODIFY COLUMN groupids VARCHAR(255) COLLATE utf8mb4_bin;";
 $conn->query($sql);
-$sql = "CREATE UNIQUE INDEX IF NOT EXISTS email ON users (email)";
+$sql = "CREATE UNIQUE INDEX IF NOT EXISTS unique_email ON users (email)";
 $conn->query($sql);
 #create group table
 $sql = "CREATE TABLE IF NOT EXISTS allgroups (
@@ -37,12 +38,13 @@ $sql = "CREATE TABLE IF NOT EXISTS allgroups (
 	created_by INT(11) NOT NULL,
 	created_date DATETIME NOT NULL,
 	updated_by INT(11) NOT NULL,
-	updated_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+	updated_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	UNIQUE KEY unique_groupname (groupname)  			
 )";
 $conn->query($sql);
 $sql="ALTER TABLE allgroups ENGINE = InnoDB";
 $conn->query($sql);
-$sql = "CREATE UNIQUE INDEX IF NOT EXISTS groupname ON allgroups (groupname)";
+$sql = "CREATE UNIQUE INDEX IF NOT EXISTS unique_groupname ON allgroups (groupname)";
 $conn->query($sql);
 #create allgroups
 $sql = "INSERT INTO allgroups ( groupname, created_by,created_date,updated_by,updated_date )
