@@ -19,7 +19,7 @@ Environment ( Two different ways )
    
 Set up
    1. Define and set up the DB on  DB/DBconfig.php file.
-   2. Run the http://localhost/createDB.php
+   2. Run the http://localhost/DB/createDB.php
    3. Go to the http://localhost/index.php with the existing users.
    4. Do the users and groups with CRUD functions by creating users or groups
    5. Users paging table and searching 
