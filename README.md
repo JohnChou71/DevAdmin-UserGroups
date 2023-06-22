@@ -1,7 +1,7 @@
 # devAdmin-users-groups
 Environment ( Two different ways )
   a)By LAMP stack server
-    Jsut copy the html folder files
+    Just copy the html folder files
   b)By Docker
     1.Install Docker Desktop (Windows)
     2.Install and enable WSL2
